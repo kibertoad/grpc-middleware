@@ -1,0 +1,54 @@
+{
+  "name": "grpc-middleware",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kibertoad/grpc-middleware.git"
+  },
+  "keywords": [
+    "grpc",
+    "middleware"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "author": "Igor Savin",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha test/**/*.spec.js",
+    "test-with-coverage": "nyc mocha --opts \"./mocha.opts\" test",
+    "prettier": "prettier --write \"{lib,test}/**/*.{js,ts}\"",
+    "eslint": "eslint --format codeframe \"lib/**/*.js\" \"test/**/*.js\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "grpc": "^1.12.2",
+    "grpc-caller": "^0.5.0",
+    "mocha": "^5.1.0",
+    "nyc": "^11.7.1",
+    "prettier": "^1.12.1"
+  },
+  "nyc": {
+    "description": "test coverage",
+    "exclude": [
+      "node_modules",
+      "test",
+      "build"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "cache": true,
+    "all": true,
+    "report-dir": "./build/reports/coverage",
+    "check-coverage": true,
+    "lines": 90,
+    "statements": 90,
+    "functions": 90,
+    "branches": 85
+  }
+}

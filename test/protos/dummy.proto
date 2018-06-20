@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package dummy;
+
+service dummy {
+  rpc generateNumber(DummyRequest) returns (DummyResponse);
+  rpc brokenMethod(DummyRequest) returns (DummyResponse);
+}
+
+message DummyRequest {}
+
+message DummyResponse {
+  int32 randomNumber = 1;
+}
