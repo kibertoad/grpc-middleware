@@ -3,10 +3,11 @@ function generateNumber(call) {
   return { randomNumber };
 }
 
-function nonImplementedMethod(call) {
-  throw new Error('Not implemented!');
+function brokenMethod(call) {
+  throw new Error('Broken!');
 }
 
 module.exports = {
+  brokenMethod,
   generateNumber
 };

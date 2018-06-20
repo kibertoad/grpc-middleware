@@ -101,10 +101,19 @@ describe('grpc-middleware', () => {
     it('correctly processes error', async () => {
       middlewareManager.registerService(dummyRpc, dummyProto.dummy.service);
       server.start();
-      const promise = client.brokenMethod({});
+      const promise = client.nonExistingMethod({});
       await expect(promise)
         .to.eventually.be.rejected.and.be.an.instanceOf(Error)
         .and.have.property('details', 'callHandler is not a function');
+    });
+
+    it('correctly propagates error', async () => {
+      middlewareManager.registerService(dummyRpc, dummyProto.dummy.service);
+      server.start();
+      const promise = client.brokenMethod({});
+      await expect(promise)
+        .to.eventually.be.rejected.and.be.an.instanceOf(Error)
+        .and.have.property('details', 'Broken!');
     });
   });
 });

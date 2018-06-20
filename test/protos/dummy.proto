@@ -5,6 +5,7 @@ package dummy;
 service dummy {
   rpc generateNumber(DummyRequest) returns (DummyResponse);
   rpc brokenMethod(DummyRequest) returns (DummyResponse);
+  rpc nonExistingMethod(DummyRequest) returns (DummyResponse);
 }
 
 message DummyRequest {}
