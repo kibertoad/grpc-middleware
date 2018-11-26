@@ -18,7 +18,8 @@ chai.use(chaiAsPromised);
 
 const client = caller('0.0.0.0:50051', DUMMY_PROTO_PATH, 'dummy');
 
-const GrpcMiddlewareManager = require('../lib/GrpcMiddlewareManager');
+const RpcService = require('../lib/RpcService');
+//const GrpcMiddlewareManager = require('../lib/GrpcMiddlewareManager');
 
 describe('grpc-middleware', () => {
   describe('middleware', () => {
@@ -26,9 +27,14 @@ describe('grpc-middleware', () => {
     let middlewareManager;
     beforeEach(async () => {
       server = await serverHelper.createServer();
+
+      rpcService = new RpcService();
+
+      /*
       middlewareManager = new GrpcMiddlewareManager(server, e => {
         console.log('RPC error: ', e);
       });
+      */
     });
 
     afterEach(async () => {

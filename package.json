@@ -20,17 +20,23 @@
     "prettier": "prettier --write \"{lib,test}/**/*.{js,ts}\"",
     "eslint": "eslint --format codeframe \"lib/**/*.js\" \"test/**/*.js\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "cls-hooked": "^4.2.2",
+    "protobuf-fieldmask": "^1.0.1",
+    "lodash.get": "^4.4.2",
+    "uuid": "^3.3.2",
+    "validation-utils": "^2.8.0"
+  },
   "devDependencies": {
-    "chai": "^4.1.2",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^4.19.1",
-    "eslint-plugin-prettier": "^2.6.0",
-    "grpc": "^1.12.2",
-    "grpc-caller": "^0.5.0",
-    "mocha": "^5.1.0",
-    "nyc": "^11.7.1",
-    "prettier": "^1.12.1"
+    "eslint": "^5.9.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "grpc": "^1.16.1",
+    "grpc-caller": "^0.11.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "prettier": "^1.15.2"
   },
   "nyc": {
     "description": "test coverage",
